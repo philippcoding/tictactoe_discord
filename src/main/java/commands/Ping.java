@@ -1,3 +1,6 @@
+package commands;
+
+import discord.DiscordApp;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.User;
@@ -13,7 +16,7 @@ public class Ping extends ListenerAdapter {
         MessageChannel channel = event.getChannel();
         String msg = message.getContentRaw().toLowerCase();
 
-        if(msg.startsWith(main.prefix + "ping")){
+        if(msg.startsWith(DiscordApp.prefix + "ping")){
             channel.sendMessage("I'm alive! Yes, don't worry");
         }
     }

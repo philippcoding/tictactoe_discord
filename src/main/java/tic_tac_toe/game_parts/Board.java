@@ -12,9 +12,9 @@ public class Board {
     }
 
     private void createBoard() {
-        this.board.add(new UpperCenterRow());
-        this.board.add(new UpperCenterRow());
-        this.board.add(new BottomRow());
+        this.board.add(new UpperCenterBlock());
+        this.board.add(new UpperCenterBlock());
+        this.board.add(new BottomBlock());
     }
 
     public void setBlock(Player pl, int x, int y) {

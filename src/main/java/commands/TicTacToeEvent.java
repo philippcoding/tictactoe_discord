@@ -1,8 +1,13 @@
+package commands;
+
+import discord.DiscordApp;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+
+
 
 public class TicTacToeEvent extends ListenerAdapter {
     public void onGuildMessageReceivedEvent(GuildMessageReceivedEvent event){
@@ -10,8 +15,9 @@ public class TicTacToeEvent extends ListenerAdapter {
         Message message = event.getMessage();
         MessageChannel channel = event.getChannel();
         String msg = message.getContentRaw().toLowerCase();
+        String prefix = DiscordApp.prefix;
 
-        if(msg.startsWith(main.prefix + "start")){
+        if(msg.startsWith(prefix + "start")){
             createGame(author);
         }
     }

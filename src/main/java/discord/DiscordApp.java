@@ -1,12 +1,14 @@
+package discord;
+
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 
 import javax.security.auth.login.LoginException;
 
-public class main {
+public class DiscordApp {
 
-    public static final String prefix = "*risbot";
+    public static final String prefix = "*risbot ";
 
     public static void main(String[] args) {
         String token = " ";
