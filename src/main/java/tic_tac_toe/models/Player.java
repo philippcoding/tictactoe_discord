@@ -1,4 +1,4 @@
-package tic_tac_toe.game_parts;
+package tic_tac_toe.models;
 
 public enum Player {
     X, O;

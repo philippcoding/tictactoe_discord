@@ -1,7 +1,7 @@
-package tic_tac_toe.console_output;
+package tic_tac_toe;
 
-import tic_tac_toe.game_parts.Board;
-import tic_tac_toe.game_parts.Player;
+import tic_tac_toe.models.Board;
+import tic_tac_toe.models.Player;
 
 public class ConsoleApp {
 

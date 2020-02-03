@@ -1,25 +1,20 @@
-package tic_tac_toe.console_output;
+package tic_tac_toe.logic;
 
-import tic_tac_toe.game_parts.Board;
-import tic_tac_toe.game_parts.Player;
+import tic_tac_toe.models.Board;
+import tic_tac_toe.models.Player;
 
-public class Game {
-    private Board board;
+public class InputOperations {
 
-    public Game() {
-        this.board = new Board();
+    // string prompt for input
+    public String promptForInput(Player pl) {
+        return (pl.name() + ", please enter your move in X,Y format, where x and y are coordinates ranging from 1-3") + ("\nPlease enter 'q' to quit.\n");
     }
 
-    // get input
-    private void promptForInput(Player pl) {
-        System.out.print(pl.name() + ", please enter your move: ");
-        System.out.println("Please enter 'q' to quit.");
-
-    }
-
-    // is input valid
-    private boolean isInputValid(String input){
+    // validate input
+    public boolean isInputValid(String input){
+        // Takes user input, and removes all characters/ spaces other than alphanumeric characters
         String modifiedInput = input.replaceAll("\\s\\w", "");
+        // if less than 2 in size (input should be x, y)
         if(modifiedInput.length() != 2){
             return false;
         }
@@ -28,6 +23,7 @@ public class Game {
             return false;
         }
 
+        // Checks for range of input; range should be 1-3
         int xCoordinate = Integer.parseInt(String.valueOf(modifiedInput.charAt(0)));
         if(xCoordinate > 3 || xCoordinate < 1){
             return false;
@@ -41,6 +37,10 @@ public class Game {
         return true;
     }
 
+    public void setMoveOnBoard(Board board, Player pl, int x, int y) {
+        board.getBoard().get(y).setCrossOrNoughtInRow(pl.toString().charAt(0), x);
+    }
+
     // Quit game? Or keep playing
     private boolean keepPlaying(String input){
         if(!input.toLowerCase().startsWith("q")){
@@ -48,14 +48,6 @@ public class Game {
         }
         else{
             return false;
-        }
-    }
-
-    public void runGame(){
-        boolean stillRunning = true;
-
-        while(stillRunning){
-
         }
     }
 }
