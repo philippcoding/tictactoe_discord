@@ -50,9 +50,9 @@ public class Board {
 //            boardColumn[index] = this.boardToCharArray[column][index];
 //        }
 //    }
-
-
-
+//
+//
+//
 //    public char[] getBoardDiagonalLeftToRightValues(){
 //        char[] boardDiagonal = new char[3];
 //        char[] boardRow = getBoardRowValues();

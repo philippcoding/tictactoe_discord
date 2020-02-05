@@ -1,4 +1,4 @@
-package commands;
+package discord.commands;
 
 import discord.DiscordApp;
 import net.dv8tion.jda.api.entities.Message;
@@ -7,17 +7,22 @@ import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class Ping extends ListenerAdapter {
 
 
-    public void onGuildMessageReceived(GuildMessageReceivedEvent event){
+public class TicTacToeEvent extends ListenerAdapter {
+    public void onGuildMessageReceivedEvent(GuildMessageReceivedEvent event){
         User author = event.getAuthor();
         Message message = event.getMessage();
         MessageChannel channel = event.getChannel();
         String msg = message.getContentRaw().toLowerCase();
+        String prefix = DiscordApp.prefix;
 
-        if(msg.startsWith(DiscordApp.prefix + "ping")){
-            channel.sendMessage("I'm alive! Yes, don't worry");
+        if(msg.startsWith(prefix + "start")){
+            createGame(author);
         }
+    }
+
+    public void createGame(User author){
+        
     }
 }
