@@ -13,6 +13,8 @@ public class ConsoleApp {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		String preset = HackySudokuMaker.createPuzzle();
+		runGameWithSample(scanner, preset);
+
 //		String preset = "7\t2\t6\t4\t9\t3\t8\t1\t5\n" +
 //				"3\t1\t5\t7\t2\t8\t9\t4\t6\n" +
 //				"4\t8\t9\t6\t5\t1\t2\t3\t7\n" +
@@ -26,7 +28,6 @@ public class ConsoleApp {
 		//preset = preset.replaceAll("\\s", "");
 		//runGameNormal(scanner);
 		//runGameWithFileObject(scanner);
-		runGameWithSample(scanner, preset);
 	}
 
 	public static Object getObjectFromFile(File file){

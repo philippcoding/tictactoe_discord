@@ -128,9 +128,9 @@ public class RunGameInConsole {
 				System.out.println("\nChecking grid...");
 				return "c";
 			}
-			else if(input.toLowerCase().startsWith("c")){
-				// add logic for checking board for win
-			}
+//			else if(input.toLowerCase().startsWith("c")){
+//				// add logic for checking board for win
+//			}
 			else{
 				input = cleanInput(input);
 			}
